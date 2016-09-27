@@ -1,0 +1,49 @@
+body{
+	background-color: black;
+}
+#title{
+	color: white;
+	font-size: 3em;
+	font-family: "papyrus";
+	width: 250px;
+	margin: 0 auto;
+}
+td{
+	border: 1px solid white;
+	width: 100px;
+	height: 100px;
+	color: white;
+}
+#playButton{
+	width: 100px;
+	font-size: 2em;
+	margin-left: 40%;
+}
+#gameStatus{
+	width: 200px;
+	color: white;
+	margin:0 auto;
+}
+#gameBoard{
+	
+	margin: 0 auto;
+}
+#nextGame{
+	display: block;
+	width: 130px;
+	height: 20px;
+	margin: 0 auto;
+}
+#restart{
+	display: block;
+	width: 130px;
+	height: 20px;
+	margin: 0 auto;
+}
+#score{
+	float: right;
+	margin-right: 40px;
+	color: white;
+}
+
+
