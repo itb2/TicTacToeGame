@@ -2,14 +2,14 @@ body{
 	background-color: black;
 }
 #title{
-	color: white;
-	font-size: 3em;
+	color: orange;
+	font-size: 3.5em;
 	font-family: "papyrus";
-	width: 250px;
+	width: 300px;
 	margin: 0 auto;
 }
 td{
-	border: 1px solid white;
+	border: 1px solid orange;
 	width: 100px;
 	height: 100px;
 	color: white;
@@ -17,33 +17,51 @@ td{
 #playButton{
 	width: 100px;
 	font-size: 2em;
-	margin-left: 40%;
+	position: relative;
+	left: 40%;
+
+}
+#gameBoard{
+	margin: 0 auto;
 }
 #gameStatus{
 	width: 200px;
 	color: white;
 	margin:0 auto;
 }
-#gameBoard{
-	
+#wrapper{
+	border: 3px solid orange;
+	height: 500px;
+	width: 600px;
 	margin: 0 auto;
 }
 #nextGame{
-	display: block;
+	display: inline-block;
 	width: 130px;
 	height: 20px;
 	margin: 0 auto;
 }
 #restart{
-	display: block;
+	display: inline-block;
 	width: 130px;
 	height: 20px;
 	margin: 0 auto;
 }
 #score{
-	float: right;
-	margin-right: 40px;
-	color: white;
+	margin-top: 40px;
+	font-family: "papyrus";
+	padding: 10px;
+	border: 1px solid white;
+	float: left;
+	color: black;
+	width: 130px;
+	background-color: orange;
+}
+@media screen and (max-width: 980px) {
+
+	#wrapper{
+		margin-left: 200px;
+	}
 }
 
 

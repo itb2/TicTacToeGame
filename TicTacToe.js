@@ -42,8 +42,6 @@ function clickHandle(){
 		target.style.backgroundColor = color;
 		var row = target.getAttribute("row");
 		var col = target.getAttribute("column");
-		console.log(row);
-		console.log(col);
 		$(target).addClass("taken");
 		if (row == "0"){
 			row0.push(color);
@@ -97,8 +95,7 @@ function clickHandle(){
 	}else{
 		alert("That box has already been taken! Pick another.");
 	}
-	console.log(currentRow);
-	console.log(currentCol)
+	
 	if(isCompleteRow("blue",currentRow)){
 		playerOneWins();
 		$("td").css("backgroundColor","gray");
@@ -137,7 +134,7 @@ function clickHandle(){
 function playerOneWins(){
 		winner = 1;
 		playerWins("1");
-	}
+}
 function playerTwoWins(){
 	winner = 2;
 	playerWins("2");
@@ -145,7 +142,18 @@ function playerTwoWins(){
 function playerWins(number){
 	$("#gameStatus").text("Player " + number + " wins");
 	$("#gameBoard").off("click");
+	if(winner == 0){
+		draws++;
+		document.getElementById("catscore").innerText = "Draws: "+ String(draws);
+	}else if(winner == 1){
+		p1++;
+		document.getElementById("p1score").innerText = "Player One: "+ String(p1);
+	}else if(winner == 2){
+		p2++;
+		document.getElementById("p2score").innerText = "Player Two: "+ String(p2);
+	}
 	$("#nextGame").show();
+
 }
 
 function isCompleteRow(color,currentRow){
@@ -200,7 +208,6 @@ function whichDiag(whichD,diagonal, diagonal1,color){
 function play(){
 	
 	initializeVars();
-	console.log(row0);
 	$("#restart").show();
 	var win = false;
 	var color = "";
@@ -213,16 +220,7 @@ function restart(){
 	window.location.reload();
 }
 function newGame(){
-	if(winner == 0){
-		draws++;
-		document.getElementById("catscore").innerText = "Draws: "+ String(draws);
-	}else if(winner == 1){
-		p1++;
-		document.getElementById("p1score").innerText = "Player One: "+ String(p1);
-	}else if(winner == 2){
-		p2++;
-		document.getElementById("p2score").innerText = "Player Two: "+ String(p2);
-	}
+	
 	initializeVars();
 	$("td").removeClass();
 	$("#gameBoard").click(clickHandle);

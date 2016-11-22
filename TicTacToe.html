@@ -7,35 +7,41 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     </head>
     <body>
-      <h1 id="title">Tic Tac Toe</h1>
+    <div id = "score">
+      <p><strong>Score:</strong></p>
+      <p id ="p1score">Player One: </p>
+      <p id ="p2score">Player Two: </p>
+      <p id ="catscore">Draws: </p>
       <button id ="nextGame" onclick = "newGame()">Play Another Game</button>
       <button id = "restart" onclick= "restart()">Restart Game Stats</button>
-      <h2 id="gameStatus"></h2>
-      <div id = "score">
-        <p><strong>Scoreboard</strong></p>
-        <p id ="p1score">Player One: </p>
-        <p id ="p2score">Player Two: </p>
-        <p id ="catscore">Draws: </p>
-      </div>      
-      <table id="gameBoard">
-        <tr id="row-0">
-          <td  column = "0" row ="0" id="d0r0"></td>
-          <td  column = "1" row ="0" ></td>
-          <td  column = "2" row ="0" id="d1r0"></td>
-        </tr>
-        <tr id="row-1">
-          <td  column= "0" row ="1"></td>
-          <td  column= "1" row ="1" id="dbr1"></td>
-          <td  column= "2" row ="1"></td>
-        </tr>
-        <tr id="row-2">
-          <td  column= "0" row ="2" id="d1r2"></td>
-          <td  column= "1" row ="2"></td>
-          <td  column= "2" row ="2" id="d0r2"></td>
-        </tr>
-      </table>
-
-      <button id="playButton">Play</button>
+    </div> 
+    
+    <div id= 'wrapper'>
+        <h1 id="title">Tic Tac Toe</h1>
+        
+        <h2 id="gameStatus"></h2>
+      
+             
+        <table id="gameBoard">
+          <tr id="row-0">
+            <td  column = "0" row ="0" id="d0r0"></td>
+            <td  column = "1" row ="0" ></td>
+            <td  column = "2" row ="0" id="d1r0"></td>
+          </tr>
+          <tr id="row-1">
+            <td  column= "0" row ="1"></td>
+            <td  column= "1" row ="1" id="dbr1"></td>
+            <td  column= "2" row ="1"></td>
+          </tr>
+          <tr id="row-2">
+            <td  column= "0" row ="2" id="d1r2"></td>
+            <td  column= "1" row ="2"></td>
+            <td  column= "2" row ="2" id="d0r2"></td>
+          </tr>
+        </table>
+      
+        <button id="playButton">Play</button>
+      </div>
       <script src="TicTacToe.js"></script>
     </body>
 </html>
