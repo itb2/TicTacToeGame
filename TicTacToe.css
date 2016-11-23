@@ -9,7 +9,7 @@ body{
 	margin: 0 auto;
 }
 td{
-	border: 1px solid orange;
+	border: 1px solid white;
 	width: 100px;
 	height: 100px;
 	color: white;
@@ -25,7 +25,7 @@ td{
 	margin: 0 auto;
 }
 #gameStatus{
-	width: 200px;
+	width: 185px;
 	color: white;
 	margin:0 auto;
 }

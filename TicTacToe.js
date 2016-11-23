@@ -1,17 +1,18 @@
 $("#gameBoard").hide();
 
-$( "#playButton" ).click(function() {
+function startGame(){
 	$("#playButton").hide();
 	$("#gameBoard").slideDown();
+	$("#gameStatus").text("Player 1: Turn #" + 1);
 	play();
-});
+}
 $("#restart").hide();
 $("#nextGame").hide();
 
-var p1 = 0;
-var p2 = 0;
+var player1 = 0;
+var player2 = 0;
 var draws = 0;
-var p1Count = 1;
+var p1Count = 2;
 var p2Count = 1;
 
 var row0, row1, row2, col0, col1, col2, dgnl0, dgnl1, game, whichD;
@@ -111,7 +112,6 @@ function clickHandle(){
 	}else if(isCompleteCol("green",currentCol)){
 		playerTwoWins();
 		$("td").css("backgroundColor","gray");
-		console.log("col is",col);
 		$("td[column="+col+"]").css("backgroundColor","green");
 	}else if(isDiagonal("blue", diagonal)){
 		playerOneWins();
@@ -125,32 +125,34 @@ function clickHandle(){
 		$("#nextGame").show();
 		$("#gameStatus").text("No one wins: Draw!");
 		winner = 0;
-		console.log(game);
 		$("td").css("backgroundColor","gray");
 		$("#gameBoard").off("click");
+		playerWins(winner);
 	}
 
 }
 function playerOneWins(){
 		winner = 1;
-		playerWins("1");
+		$("#gameStatus").text("Player " + winner + " wins");
+		playerWins(winner);
 }
 function playerTwoWins(){
 	winner = 2;
-	playerWins("2");
+	$("#gameStatus").text("Player " + winner + " wins");
+	playerWins(winner);
 }
-function playerWins(number){
-	$("#gameStatus").text("Player " + number + " wins");
+function playerWins(winner){
+	
 	$("#gameBoard").off("click");
 	if(winner == 0){
 		draws++;
 		document.getElementById("catscore").innerText = "Draws: "+ String(draws);
 	}else if(winner == 1){
-		p1++;
-		document.getElementById("p1score").innerText = "Player One: "+ String(p1);
+		player1++;
+		document.getElementById("p1score").innerText = "Player One: "+ String(player1);
 	}else if(winner == 2){
-		p2++;
-		document.getElementById("p2score").innerText = "Player Two: "+ String(p2);
+		player2++;
+		document.getElementById("p2score").innerText = "Player Two: "+ String(player2);
 	}
 	$("#nextGame").show();
 
@@ -213,21 +215,22 @@ function play(){
 	var color = "";
 
 	$("#gameBoard").click(clickHandle);
-	
-	
+		
 }
 function restart(){
 	window.location.reload();
 }
-function newGame(){
+function nextGame(){
 	
 	initializeVars();
 	$("td").removeClass();
+
 	$("#gameBoard").click(clickHandle);
 	$("td").css("backgroundColor","black");
 	$("#nextGame").hide();
-	p1Count = 1;
+	p1Count = 2;
 	p2Count = 1;
+	$("#gameStatus").text("Player 1: Turn #" + 1);
 
 }
 
